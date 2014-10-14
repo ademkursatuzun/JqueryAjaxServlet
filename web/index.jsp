@@ -7,27 +7,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <title>JSP Page</title>
-       <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-       <script type="text/javascript">
-            
-      $(document).ready(function() {
-         $('#button1').click(function(event) {
-                var name = $('#name').val();
-                var password = $('#password').val();
-                $.get(
-                    'ServletDemo1',
-                {
-                        username : name,
-                        password : password
-                }, function(responseText) {
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#button1').click(function(event) {
+                    var name = $('#name').val();
+                    var password = $('#password').val();
+                    $.get(
+                            'ServletDemo1',
+                            {
+                                username: name,
+                                password: password
+                            }, function(responseText) {
                         $('#ajaxResponse').text(responseText);
+                    });
+
                 });
-                
-        });
-});
-     </script>
+            });
+        </script>
         <style type="text/css">
             .login
             {
@@ -49,27 +49,27 @@
                 height: 20px;
                 position: absolute;
                 background-color: #f1c40f;
-                
+
             }
         </style>
-        
+
     </head>
     <body>
-<form>
-    
-    <div class="login">
+        <form>
+
+            <div class="login">
                 <h1>JqueryAjaxServlet</h1>
                 <form  class="form1" name="form1" method="post" action="Demo1">
                     <p><input type="text"  id="name" value="" placeholder="Username or Email"></p>
                     <p><input type="password" id="password" value="" placeholder="Password"></p>
                     <p><input type="button" id="button1"  value="Login"></p>
                 </form>
-     </div>
-    <fieldset class="field">
-      <div id="ajaxResponse"></div>
-    </fieldset>
-    
-</form>
-</body>
+            </div>
+            <fieldset class="field">
+                <div id="ajaxResponse"></div>
+            </fieldset>
+
+        </form>
+    </body>
 
 </html>
